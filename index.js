@@ -8,12 +8,28 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dates, id = -1) => {
+  if (id == -1){
+      result = [];
+      for(idDates = 0; idDates < dates.length; idDates++){
+          result.push(Date.parse(dates[idDates])/1000);
+      }
+      return sortDates(result).join('-');
+  }
+
+  else {
+      return Date.parse(dates[id])/1000;
+  }
+};
+
+const sortDates = (dates) => {
+  return dates.sort()
+}
 
 // ! JANGAN DIMODIFIKASI
 (() => {
   // IIFE
-
+  
   // '1546387200-1580662800-1614841200-1617573600-1651802400' (dalam string)
   console.log(createDate?.(dates));
 
