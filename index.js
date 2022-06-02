@@ -18,7 +18,7 @@ const createDate = (dates, id = -1) => {
   }
 
   else {
-      return Date.parse(dates[id])/1000;
+      return (Date.parse(dates[id])/1000).toString();
   }
 };
 
